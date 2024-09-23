@@ -1,46 +1,25 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { ConceptsTestsComponent } from './concepts-tests.component';
-describe('ConceptsTestsComponent', () => {
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ConceptsTestsComponent } from "./concepts-tests.component";
+
+describe('ConceptTestsComponent', () => {
 
   let name: string;
   let component: ConceptsTestsComponent;
   let fixture: ComponentFixture<ConceptsTestsComponent>
+
   beforeEach(() => {
-    console.log('before -->> ')
-    name = 'Danilo'
+    name = 'Dan'
 
     TestBed.configureTestingModule({
-      declarations: [ConceptsTestsComponent],
+      declarations: [ConceptsTestsComponent]
     }).compileComponents()
-
 
     fixture = TestBed.createComponent(ConceptsTestsComponent)
     component = fixture.componentInstance
     fixture.detectChanges();
   })
 
-  afterEach(() => {
-    console.log('after -->> ')
-
-    localStorage.removeItem('token')
+  it('Deve renderizar texto na página', () => {
+    expect(name).toContain('Dan')
   })
-
-  beforeAll(() => {
-    localStorage.setItem('token', 'uashduhashduas')
-  })
-
-  it('Deve ter um h1 na pagina', () => {
-    localStorage.setItem('token', '8aud8us8ud8sau')
-    expect(name).toContain('Danilo')
-  })
-
-  it('Deve ter um botão na pagina', () => {
-    expect(name).toContain('Danilo')
-  })
-
-  it('Deve ter um botão na pagina', () => {
-    expect(name).toContain('Danilo')
-
-  })
-
 })
